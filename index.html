@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PAVHVEST — Invest and Harvest</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <h1>PAVHVEST</h1>
+        <div class="motto">INVEST AND HARVEST</div>
+      </div>
+      <nav>
+        <a href="#create">Create</a>
+        <a href="#feed">Market Notes</a>
+        <a href="#hosts">Hosts</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="create" class="card">
+      <h2>Share a market note</h2>
+      <form id="post-form">
+        <label>Author
+          <input type="text" name="author" id="author" placeholder="Your name (optional)" />
+        </label>
+        <label>Note
+          <textarea name="note" id="note" rows="4" placeholder="What do you expect in the global market?"></textarea>
+        </label>
+        <label>Image (chart or photo)
+          <input type="file" name="image" id="image" accept="image/*" />
+        </label>
+        <label class="host-label"><input type="checkbox" name="is_host" id="is_host" /> I'm a host / organizer</label>
+        <div class="actions">
+          <button type="submit" class="btn">Post</button>
+          <button type="button" id="refresh" class="btn alt">Refresh feed</button>
+        </div>
+        <div id="status" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section id="feed" class="card">
+      <h2>Market Notes</h2>
+      <div id="posts" class="posts-grid" aria-live="polite"></div>
+    </section>
+
+    <section id="hosts" class="card">
+      <h2>Hosts & Organizers</h2>
+      <div id="hosts-list" class="hosts-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> PAVHVEST — Invest and Harvest. Not financial advice.</small>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
